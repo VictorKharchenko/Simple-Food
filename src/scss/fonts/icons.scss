@@ -1,0 +1,85 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+._icon-call:before {
+	content: "\e901";
+}
+._icon-cart:before {
+	content: "\e902";
+}
+._icon-message:before {
+	content: "\e90d";
+}
+._icon-arrow-right:before {
+	content: "\e900";
+}
+._icon-category-asia:before {
+	content: "\e903";
+}
+._icon-category-burger:before {
+	content: "\e904";
+}
+._icon-category-dish:before {
+	content: "\e905";
+}
+._icon-category-pizza:before {
+	content: "\e906";
+}
+._icon-category-sandvich:before {
+	content: "\e907";
+}
+._icon-delivery:before {
+	content: "\e908";
+}
+._icon-facebook:before {
+	content: "\e909";
+}
+._icon-instagram:before {
+	content: "\e90a";
+}
+._icon-left:before {
+	content: "\e90b";
+}
+._icon-location:before {
+	content: "\e90c";
+}
+._icon-quote-close:before {
+	content: "\e90e";
+}
+._icon-quote-open:before {
+	content: "\e90f";
+}
+._icon-restorant:before {
+	content: "\e910";
+}
+._icon-right:before {
+	content: "\e911";
+}
+._icon-search:before {
+	content: "\e912";
+}
+._icon-telegram:before {
+	content: "\e913";
+}
+._icon-time:before {
+	content: "\e914";
+}
+._icon-timer:before {
+	content: "\e915";
+}
+._icon-twitter:before {
+	content: "\e916";
+}
