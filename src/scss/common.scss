@@ -1,6 +1,11 @@
 // Заголовки, общие БЄМ блоки и проче...
 //========================================================================================================================================================
+.page {
+	/* .page__main */
 
+	&__main {
+	}
+}
 //========================================================================================================================================================
 .sr-only {
 	position: absolute;
@@ -13,4 +18,73 @@
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
+}
+
+.button {
+	background: $orange-900;
+	border-radius: rem(5);
+	padding: rem(12) rem(32);
+	font-weight: 400;
+	font-size: rem(18);
+	line-height: math.div(23, 18);
+	letter-spacing: 0.03em;
+	color: #ffffff;
+	transition: color 0.3s, background-color 0.3s, box-shadow 0.3s ease 0s;
+	&:focus {
+		border-radius: rem(5);
+		box-shadow: 0 0 0 rem(2) $orange-900;
+		background-color: $background-color;
+		color: $orange-900;
+		transition: color 0.3s, background-color 0.3s, box-shadow 0.3s ease 0s;
+	}
+	&:hover {
+		box-shadow: 0 0 0 rem(2) $orange-900;
+		background-color: transparent;
+		border-radius: rem(5);
+		color: $orange-900;
+		transition: color 0.3s, background-color 0.3s, box-shadow 0.3s ease 0s;
+	}
+	&:active {
+		background-color: $background-color;
+		color: $orange-900;
+		box-shadow: none;
+		transition: color 0.3s, background-color 0.3s, box-shadow 0.3s, color 0.3s ease 0s;
+	}
+}
+
+.link {
+	position: relative;
+	transition: content 0.3s, box-shadow 0.3s, color 0.3s, text-shadow 0.3s ease 0s;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: rem(1);
+		background-color: $mainColor;
+	}
+	&:focus::after {
+		content: none;
+		transition: content 0.3s ease 0s;
+	}
+	&:focus {
+		box-shadow: 0 0 0 rem(2) $orange-900;
+		border-radius: rem(5);
+		transition: box-shadow 0.3s ease 0s;
+	}
+	&:hover::after {
+		content: none;
+		transition: content 0.3s ease 0s;
+	}
+	&:hover {
+		box-shadow: none;
+		color: $orange-900;
+		transition: content 0.3s, color 0.3s ease 0s;
+	}
+	&:active {
+		text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+		color: inherit;
+		transition: text-shadow 0.3s ease 0s;
+	}
 }
