@@ -67,19 +67,23 @@ $responsiveType: 1;
 
 body {
 	background-color: $silver-100;
+	transition: background-color 0.3s ease 0.3s;
+	.menu-open & {
+		@media (max-width: $mobile) {
+			background-color: $darkBlue-900;
+			transition: background-color 0.3s ease 0.3s;
+		}
+	}
+
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
 	}
+
 	// Сайт загружен
 	.loaded & {
-	}
-	.menu-open & {
-		@media (max-width: $mobile) {
-			background-color: $darkBlue-900;
-		}
 	}
 }
 

@@ -5,8 +5,37 @@
 
 	&__main {
 	}
+
+	/* .page__popular */
+
+	&__popular {
+	}
 }
 //========================================================================================================================================================
+.logo {
+	margin-right: rem(15);
+	position: relative;
+	z-index: 5;
+	transition: box-shadow 0.3s, opacity 0.3s ease 0s;
+	&:focus {
+		box-shadow: 0 0 0 rem(2) $orange-900;
+		border-radius: rem(5);
+		transition: box-shadow 0.3s ease 0s;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: none;
+			opacity: 0.8;
+			transition: opacity 0.3s ease 0s;
+		}
+	}
+	&:active {
+		opacity: 0.5;
+		box-shadow: none;
+		transition: opacity 0.3s ease 0s;
+	}
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -83,8 +112,23 @@
 		transition: content 0.3s, color 0.3s ease 0s;
 	}
 	&:active {
-		text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+		text-shadow: rem(2) rem(2) rem(5) rgba(54, 56, 83, 0.5);
 		color: inherit;
 		transition: text-shadow 0.3s ease 0s;
+	}
+}
+
+.title {
+	font-weight: 500;
+	@include adaptiveValue("font-size", 36, 24);
+	line-height: math.div(47, 36);
+	text-align: center;
+}
+
+.page {
+	transition: margin-right 0.9s ease 0.5s;
+	position: relative;
+	.menu-open & {
+		margin-right: -500%;
 	}
 }

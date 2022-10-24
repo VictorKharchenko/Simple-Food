@@ -26,5 +26,14 @@ for (let i = 0; i < menuLink.length; i++) {
 	});
 };
 
+let popularLink = [...document.getElementsByClassName("popular__link")];
+for (let i = 0; i < popularLink.length; i++) {
+	popularLink[i].addEventListener("click", function (e) {
+		e.preventDefault();
+		popularLink.forEach(link => link.classList.remove("popular-active"));
+		e.target.classList.add("popular-active");
+	});
+};
+
 
 

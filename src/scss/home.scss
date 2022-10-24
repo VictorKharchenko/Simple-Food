@@ -1,6 +1,7 @@
 //====================================================================================================
 .main {
 	@include adaptiveValue("padding-top", 160, 90);
+
 	/* .main__container */
 
 	&__container {
@@ -25,6 +26,10 @@
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
+		@media (max-width: $tablet) {
+			@include adaptiveValue("padding-top", 160, 0);
+			z-index: 1;
+		}
 	}
 
 	/* .main__span */
@@ -36,7 +41,7 @@
 	/* .main__text */
 
 	&__text {
-		@include adaptiveValue("max-width", 450, 345);
+		@include adaptiveValue("max-width", 450, 300);
 		line-height: math.div(30, 20);
 		@include adaptiveValue("font-size", 20, 16);
 		&:not(:last-child) {
@@ -66,22 +71,22 @@
 
 	&__media {
 		position: relative;
+		z-index: -1;
 	}
 
 	/* .main__img */
 
 	&__img {
-		@include adaptiveValue("max-width", 560, 260);
+		@include adaptiveValue("max-width", 560, 250);
 		transition: opacity 2s ease 0s;
+
 		@media (max-width: $tablet) {
 			position: absolute;
 			top: 0;
 			right: 0;
-			opacity: 0.9;
-			transition: opacity 2s ease 0s;
 		}
 		@media (max-width: $mobile) {
-			opacity: 0.6;
+			opacity: 0.8;
 			transition: opacity 2s ease 0s;
 		}
 		@media (max-width: $mobileSmall) {
@@ -90,4 +95,175 @@
 		}
 	}
 }
+
 //====================================================================================================
+.popular {
+	@include adaptiveValue("padding-top", 120, 40);
+	padding-bottom: rem(50);
+	@media (max-width: $tablet) {
+		@include adaptiveValue("padding-top", 280, 50);
+	}
+	.menu-open & {
+		display: none;
+	}
+
+	/* .popular__container */
+
+	&__container {
+	}
+
+	/* .popular__title */
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 60, 30);
+	}
+
+	/* .popular__body */
+
+	&__body {
+	}
+
+	/* .popular__list */
+
+	&__list {
+		@include adaptiveValue("margin-bottom", 45, 30);
+		display: grid;
+		gap: rem(20);
+		grid-template-columns: rem(200) rem(181) rem(214) rem(280) rem(167);
+		@media (max-width: $pc) {
+			overflow: auto;
+		}
+	}
+
+	/* .popular__item */
+
+	&__item {
+	}
+
+	/* .popular__link */
+
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		padding: rem(13) rem(32);
+		font-size: rem(20);
+		line-height: math.div(24, 20);
+		background-color: #ffffff;
+		box-shadow: 0 0 0 rem(1) $silver-200;
+		border-radius: rem(5);
+		transition: box-shadow 0.3s, background-color 0.3s, color 0.3s ease 0s;
+		&::before {
+			content: "", "";
+			font-size: rem(42);
+		}
+		&:focus {
+			color: $mainColor;
+			box-shadow: 0 0 0 rem(2) rgba(255, 104, 56, 0.7);
+			transition: box-shadow 0.3s ease 0s;
+		}
+		&:hover {
+			box-shadow: 0 0 0 rem(2) rgba(255, 104, 56, 0.7);
+			background-color: rgba(255, 122, 80, 0.1);
+			color: $orange-900;
+			transition: box-shadow 0.3s, background-color 0.3s, color 0.3s ease 0s;
+		}
+		&:active {
+			box-shadow: inset 0 rem(-5) rem(12) rgba(255, 104, 56, 0.2);
+			color: $mainColor;
+			transition: box-shadow 0.3s, color 0.3s ease 0s;
+		}
+	}
+
+	.popular-active {
+		background-color: $orange-900;
+		color: #ffffff;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}
+
+.card-popular {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	@include adaptiveValue("gap", 30, 5);
+	@include adaptiveValue("margin-bottom", 60, 30);
+	@media (max-width: $tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: rem(375)) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	/* .card-popular__item */
+
+	&__item {
+		background: #ffffff;
+		box-shadow: 0 0 0 rem(1) $silver-200;
+		border-radius: rem(5);
+		transition: box-shadow 0.3s ease 0s;
+		&:hover {
+			box-shadow: 0 0 0 rem(1) $orange-900;
+			transition: box-shadow 0.3s ease 0s;
+		}
+	}
+
+	/* .card-popular__link */
+
+	&__links {
+		padding: rem(20) rem(15);
+		display: grid;
+		align-items: stretch;
+		justify-items: center;
+		text-align: center;
+	}
+
+	/* .card-popular__img */
+
+	&__img {
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	/* .card-popular__title */
+
+	&__title {
+		height: rem(36);
+		font-size: rem(15);
+		line-height: math.div(18, 15);
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	/* .card-popular__price */
+
+	&__price {
+		font-weight: 500;
+		font-size: rem(15);
+		line-height: math.div(21, 15);
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	/* .card-popular__button */
+
+	&__button {
+		padding: rem(7) rem(16);
+		font-size: rem(14);
+		line-height: math.div(18, 14);
+	}
+}
+.card-popular__link {
+	line-height: math.div(30, 20);
+	position: relative;
+	display: inline-block;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	&::after {
+		bottom: rem(5);
+	}
+}
