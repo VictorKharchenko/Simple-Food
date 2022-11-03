@@ -4,7 +4,7 @@
 	width: 100%;
 	left: 0;
 	top: 0;
-	z-index: 50;
+	z-index: 10;
 	transition: background-color 0.3s ease 0s;
 	/* .header__container */
 
@@ -17,6 +17,7 @@
 		transition: min-height 0.3s ease 0s;
 		@include adaptiveValue("min-height", 140, 70);
 	}
+
 	/* .header__img */
 
 	&__img {
@@ -37,18 +38,20 @@
 		align-items: center;
 		flex: 1 1 auto;
 	}
+
 	&._header-scroll {
 		background-color: rgba(255, 255, 255, 0.85);
+
 		.header__container {
 			min-height: rem(70);
 		}
 	}
 }
+
 .menu {
 	/* .menu__icon */
 
-	&__icon {
-	}
+	&__icon {}
 
 	/* .menu__body */
 
@@ -67,6 +70,7 @@
 		font-weight: 400;
 		font-size: rem(18);
 		line-height: math.div(22, 18);
+
 		@media (max-width: $mobile) {
 			flex-direction: column;
 			position: fixed;
@@ -80,6 +84,7 @@
 			background-color: $silver-100;
 			transition: left 0.9s ease 0s;
 			padding: rem(125) rem(15) rem(0) rem(15);
+
 			&::before {
 				content: "";
 				position: fixed;
@@ -91,9 +96,11 @@
 				transition: left 0.9s ease 0s;
 				border-bottom: rem(2) solid $silver-200;
 			}
+
 			.menu-open & {
 				left: 0;
 				z-index: 1;
+
 				&::before {
 					left: 0;
 				}
@@ -103,18 +110,19 @@
 
 	/* .menu__item */
 
-	&__item {
-	}
+	&__item {}
 
 	/* .menu__link */
 
 	&__link {
 		transition: box-shadow 0.3s, color 0.3s, text-shadow 0.3s ease 0s;
+
 		&:focus {
 			box-shadow: 0 0 0 rem(1) $orange-900;
 			border-radius: rem(5);
 			transition: box-shadow 0.3s ease 0s;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				box-shadow: none;
@@ -122,12 +130,14 @@
 				transition: color 0.3s ease 0s;
 			}
 		}
+
 		&:active {
 			box-shadow: none;
 			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 			transition: text-shadow 0.3s ease 0s;
 		}
 	}
+
 	.link-active {
 		color: $orange-900;
 		box-shadow: none;
@@ -135,17 +145,18 @@
 
 	/* .menu__action */
 
-	&__action {
-	}
+	&__action {}
 }
 
 .action-header {
 	font-size: rem(24);
 	display: flex;
 	gap: rem(10);
+
 	@media (max-width: $mobile) {
 		padding-right: rem(20);
 	}
+
 	.menu-open & {
 		@media (max-width: $mobileSmall) {
 			display: none;
@@ -167,6 +178,7 @@
 		height: rem(44);
 		transition: linear 0.3s, color 0.3s, background-color 0.3s ease 0s;
 		position: relative;
+
 		&::after {
 			content: "4";
 			position: absolute;
@@ -182,6 +194,7 @@
 			background-color: $orange-900;
 		}
 	}
+
 	&__search:focus,
 	&__cart:focus {
 		border-radius: rem(5);
@@ -189,6 +202,7 @@
 		background-color: $background-color;
 		transition: linear 0.3s, background-color 0.3s ease 0s;
 	}
+
 	&__search:hover,
 	&__cart:hover {
 		box-shadow: none;
@@ -196,18 +210,21 @@
 		border-radius: rem(5);
 		color: #ffffff;
 		transition: color 0.3s, background-color 0.3s ease 0s;
+
 		&::after {
 			color: $orange-900;
 			background-color: #ffffff;
 			transition: color 0.3s, background-color 0.3s ease 0s;
 		}
 	}
+
 	&__search:active,
 	&__cart:active {
 		background-color: $background-color;
 		box-shadow: none;
 		color: inherit;
 		transition: color 0.3s, background-color 0.3s ease 0s;
+
 		&::after {
 			color: #ffffff;
 			background-color: $orange-900;
@@ -222,15 +239,18 @@
 
 .icon-menu {
 	display: none;
+
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
 		width: rem(30);
 		height: rem(18);
 		z-index: 5;
+
 		@media (any-hover: none) {
 			cursor: default;
 		}
+
 		span,
 		&::before,
 		&::after {
@@ -242,26 +262,32 @@
 			height: rem(2);
 			background-color: #000;
 		}
+
 		&::before {
 			top: 0;
 		}
+
 		&::after {
 			bottom: 0;
 		}
+
 		span {
 			top: calc(50% - rem(1));
 		}
+
 		.menu-open & {
 			span {
 				width: 0;
 			}
+
 			&::before,
-			&::after {
-			}
+			&::after {}
+
 			&::before {
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
 			}
+
 			&::after {
 				bottom: calc(50% - rem(1));
 				transform: rotate(45deg);

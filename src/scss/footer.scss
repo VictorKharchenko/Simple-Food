@@ -6,10 +6,12 @@
 		display: flex;
 		justify-content: space-between;
 		@include adaptiveValue("padding-bottom", 60, 20);
+
 		@media (max-width: $mobile) {
 			flex-direction: column;
 			gap: rem(30);
 		}
+
 		/* display: grid;
 		grid-template-columns: auto 1fr auto;
 		row-gap: rem(60);
@@ -20,8 +22,7 @@
 
 	/* .footer__column */
 
-	&__column {
-	}
+	&__column {}
 
 	/* .footer__column--logo */
 
@@ -42,9 +43,45 @@
 	/* .footer__column--contact */
 
 	&__column--contact {
-		@media (max-width: $tablet) {
+		@media (max-width: $mobile) {
 			order: 2;
+			width: 100%;
+			height: 100%;
+			top: rem(250);
+			left: -100%;
+			bottom: 0;
+			gap: rem(20);
+			overflow: auto;
+			background-color: $silver-100;
+			transition: left 0.9s ease 0s;
+			padding-top: rem(15);
+
+
+			&::before {
+				content: "";
+				position: fixed;
+				background-color: $silver-100;
+				height: 100%;
+				width: 100%;
+				left: -100%;
+				top: rem(250);
+				transition: left 0.9s ease 0s;
+				border-top: rem(2) solid $silver-200;
+			}
+
+			.menu-open & {
+				position: fixed;
+				left: 0;
+				padding-left: rem(15);
+				z-index: 10;
+
+				&::before {
+					left: 0;
+				}
+			}
 		}
+
+
 	}
 
 	/* .footer__logo */
@@ -74,18 +111,22 @@
 		border: rem(1) solid $gray;
 		border-radius: rem(5);
 		transition: box-shadow 0.3s ease 0s;
+
 		&::placeholder {
 			color: $gray;
 			opacity: 0.9;
 		}
+
 		&:focus {
 			outline: none;
 			box-shadow: 0 0 0 rem(2) $orange-900;
 			transition: box-shadow 0.3s ease 0s;
 		}
+
 		&:hover {
 			box-shadow: none;
 		}
+
 		&:hover::placeholder {
 			color: $darkBlue-900;
 			opacity: 0.9;
@@ -113,12 +154,14 @@
 		@include adaptiveValue("gap", 70, -120);
 		font-size: rem(18);
 		line-height: math.div(23, 18);
+
 		@media (max-width: $tablet) {
 			display: flex;
 			flex-direction: column;
 			text-align: center;
 			gap: rem(20);
 		}
+
 		@media (max-width: $mobile) {
 			text-align: start;
 		}
@@ -131,6 +174,7 @@
 		gap: rem(15);
 		font-size: rem(16);
 		line-height: math.div(32, 16);
+
 		&:not(:last-child) {
 			margin-bottom: rem(15);
 		}
@@ -152,6 +196,7 @@
 		color: $mainColor;
 		padding: rem(30) rem(15);
 		position: relative;
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -161,6 +206,7 @@
 			left: -100%;
 			right: -100%;
 		}
+
 		@media (max-width: $tablet) {
 			padding: rem(20) rem(15);
 		}
@@ -170,8 +216,7 @@
 .menu-footer {
 	/* .menu-footer__list */
 
-	&__list {
-	}
+	&__list {}
 
 	/* .menu-footer__item */
 
@@ -185,19 +230,23 @@
 
 	&__link {
 		transition: background-color 0.3s ease 0s;
+
 		&::after {
 			content: none;
 		}
+
 		&:hover::after {
 			content: "";
 			background-color: $orange-900;
 			transition: background-color 0.3s ease 0s;
 		}
+
 		&:active::after {
 			content: none;
 		}
 	}
 }
+
 .contact-footer {
 	@include adaptiveValue("padding-right", 65, -120);
 
@@ -206,18 +255,19 @@
 	&__adress,
 	&__phone,
 	&__email {
-		display: inline-block;
 		padding-left: rem(30);
 		display: flex;
 		align-items: center;
 		position: relative;
 		transition: text-shadow 0.3s ease 0s;
+
 		&::before {
 			content: "", "";
 			position: absolute;
 			font-size: rem(25);
 			left: 0;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				text-shadow: rem(2) rem(2) rem(5) rgba(54, 56, 83, 0.5);
@@ -228,14 +278,13 @@
 
 	/* .contact-footer__phone */
 
-	&__phone {
-	}
+	&__phone {}
 
 	/* .contact-footer__email */
 
-	&__email {
-	}
+	&__email {}
 }
+
 .social-footer {
 	/* .social-footer__item */
 
@@ -250,6 +299,7 @@
 		font-size: rem(16); */
 		transition: box-shadow 0.3s, background-color 0.3s, color 0.3s ease 0s;
 		position: relative;
+
 		&::before {
 			content: "", "";
 			position: absolute;
@@ -257,16 +307,19 @@
 			transform: translateX(-50%);
 			line-height: rem(39);
 		}
+
 		&:focus {
 			box-shadow: 0 0 0 rem(2) rgba(255, 104, 56, 0.7);
 			transition: box-shadow 0.3s ease 0s;
 		}
+
 		&:hover {
 			box-shadow: none;
 			background-color: $orange-900;
 			color: #ffffff;
 			transition: background-color 0.3s, color 0.3s ease 0s;
 		}
+
 		&:active {
 			box-shadow: none;
 			background-color: $silver-200;
