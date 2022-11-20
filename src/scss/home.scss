@@ -23,9 +23,11 @@
 		@include adaptiveValue("font-size", 66, 40);
 		line-height: math.div(86, 66);
 		text-transform: uppercase;
+
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
+
 		@media (max-width: $tablet) {
 			@include adaptiveValue("padding-top", 160, 0);
 			z-index: 1;
@@ -44,6 +46,7 @@
 		@include adaptiveValue("max-width", 450, 300);
 		line-height: math.div(30, 20);
 		@include adaptiveValue("font-size", 20, 16);
+
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
@@ -59,13 +62,11 @@
 
 	/* .main__button */
 
-	&__button {
-	}
+	&__button {}
 
 	/* .main__link */
 
-	&__link {
-	}
+	&__link {}
 
 	/* .main__media */
 
@@ -85,10 +86,12 @@
 			top: 0;
 			right: 0;
 		}
+
 		@media (max-width: $mobile) {
 			opacity: 0.8;
 			transition: opacity 2s ease 0s;
 		}
+
 		@media (max-width: $mobileSmall) {
 			opacity: 0.2;
 			transition: opacity 2s ease 0s;
@@ -100,17 +103,18 @@
 .popular {
 	@include adaptiveValue("padding-top", 120, 40);
 	padding-bottom: rem(50);
+
 	@media (max-width: $tablet) {
 		@include adaptiveValue("padding-top", 280, 50);
 	}
+
 	.menu-open & {
 		display: none;
 	}
 
 	/* .popular__container */
 
-	&__container {
-	}
+	&__container {}
 
 	/* .popular__title */
 
@@ -120,8 +124,7 @@
 
 	/* .popular__body */
 
-	&__body {
-	}
+	&__body {}
 
 	/* .popular__list */
 
@@ -130,6 +133,7 @@
 		display: grid;
 		gap: rem(20);
 		grid-template-columns: rem(200) rem(181) rem(214) rem(280) rem(167);
+
 		@media (max-width: $pc) {
 			overflow: auto;
 		}
@@ -137,8 +141,7 @@
 
 	/* .popular__item */
 
-	&__item {
-	}
+	&__item {}
 
 	/* .popular__link */
 
@@ -153,21 +156,25 @@
 		box-shadow: 0 0 0 rem(1) $silver-200;
 		border-radius: rem(5);
 		transition: box-shadow 0.3s, background-color 0.3s, color 0.3s ease 0s;
+
 		&::before {
 			content: "", "";
 			font-size: rem(42);
 		}
+
 		&:focus {
 			color: $mainColor;
 			box-shadow: 0 0 0 rem(2) rgba(255, 104, 56, 0.7);
 			transition: box-shadow 0.3s ease 0s;
 		}
+
 		&:hover {
 			box-shadow: 0 0 0 rem(2) rgba(255, 104, 56, 0.7);
 			background-color: rgba(255, 122, 80, 0.1);
 			color: $orange-900;
 			transition: box-shadow 0.3s, background-color 0.3s, color 0.3s ease 0s;
 		}
+
 		&:active {
 			box-shadow: inset 0 rem(-5) rem(12) rgba(255, 104, 56, 0.2);
 			color: $mainColor;
@@ -178,6 +185,7 @@
 	.popular-active {
 		background-color: $orange-900;
 		color: #ffffff;
+
 		&:focus {
 			box-shadow: none;
 		}
@@ -189,9 +197,11 @@
 	grid-template-columns: repeat(5, 1fr);
 	@include adaptiveValue("gap", 30, 5);
 	@include adaptiveValue("margin-bottom", 60, 30);
+
 	@media (max-width: $tablet) {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
 	@media (max-width: rem(375)) {
 		grid-template-columns: repeat(1, 1fr);
 	}
@@ -203,6 +213,7 @@
 		box-shadow: 0 0 0 rem(1) $silver-200;
 		border-radius: rem(5);
 		transition: box-shadow 0.3s ease 0s;
+
 		&:hover {
 			box-shadow: 0 0 0 rem(1) $orange-900;
 			transition: box-shadow 0.3s ease 0s;
@@ -233,6 +244,7 @@
 		height: rem(36);
 		font-size: rem(15);
 		line-height: math.div(18, 15);
+
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
@@ -244,6 +256,7 @@
 		font-weight: 500;
 		font-size: rem(15);
 		line-height: math.div(21, 15);
+
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
@@ -257,13 +270,69 @@
 		line-height: math.div(18, 14);
 	}
 }
+
 .card-popular__link {
 	line-height: math.div(30, 20);
 	position: relative;
 	display: inline-block;
 	margin-left: 50%;
 	transform: translateX(-50%);
+
 	&::after {
 		bottom: rem(5);
 	}
 }
+
+.page {
+
+	// .page__main
+
+	&__main {}
+}
+
+.main {
+
+	// .main__container
+
+	&__container {}
+
+	// .main__body
+
+	&__body {}
+
+	// .main__title
+
+	&__title {}
+
+	// .main__span
+
+	&__span {}
+
+	// .main__text
+
+	&__text {}
+
+	// .main__actions
+
+	&__actions {}
+
+	// .main__button
+
+	&__button {}
+
+	// .main__link
+
+	&__link {}
+
+	// .main__media
+
+	&__media {}
+
+	// .main__img
+
+	&__img {}
+}
+
+.button {}
+
+.link {}
